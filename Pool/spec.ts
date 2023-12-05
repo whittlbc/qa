@@ -78,7 +78,7 @@ class Pool extends LiveTable {
         this.poolId = event.data.poolId.toString();
     }
 
-    @OnEvent("allov2.Allo.PoolCreated")
+    @OnEvent("qa.Allo.PoolCreated")
     async onPoolCreated(event: Event) {
         this.profileId = event.data.profileId;
         this.strategy = event.data.strategy;
@@ -108,21 +108,21 @@ class Pool extends LiveTable {
         }
     }
 
-    @OnEvent("allov2.Allo.PoolMetadataUpdated")
+    @OnEvent("qa.Allo.PoolMetadataUpdated")
     onPoolMetadataUpdated(event: Event) {
         const [protocol, pointer] = event.data.metadata;
         this.metadataPointer = pointer;
         this.metadataProtocol = protocol;
     }
 
-    @OnEvent("allov2.Allo.PoolFunded")
+    @OnEvent("qa.Allo.PoolFunded")
     async onPoolFunded(event: Event) {
         await this.load();
         this.amount = this.amount.plus(event.data.amount);
         this.feePaid = this.feePaid.plus(event.data.fee);
     }
 
-    @OnEvent("allov2.Allo.BaseFeePaid")
+    @OnEvent("qa.Allo.BaseFeePaid")
     async onBaseFeePaid(event: Event) {
         await this.load();
         this.baseFeePaid = this.baseFeePaid.plus(event.data.amount);

@@ -68,7 +68,7 @@ class MicroGrants extends LiveTable {
         this.strategy = event.origin.contractAddress;
     }
 
-    @OnEvent('allov2.MicroGrantsStrategy.Initialized')
+    @OnEvent('qa.MicroGrantsStrategy.Initialized')
     async onMicroGrantsInitalized(event: Event) {
         const {
             useRegistryAnchor,
@@ -90,7 +90,7 @@ class MicroGrants extends LiveTable {
         this.strategyId = strategyId
     }
 
-    @OnEvent('allov2.MicroGrantsGovStrategy.Initialized')
+    @OnEvent('qa.MicroGrantsGovStrategy.Initialized')
     async onMicroGrantsGovInitalized(event: Event) {
         const {
             useRegistryAnchor,
@@ -119,7 +119,7 @@ class MicroGrants extends LiveTable {
     }
 
 
-    @OnEvent('allov2.MicroGrantsHatsStrategy.Initialized')
+    @OnEvent('qa.MicroGrantsHatsStrategy.Initialized')
     async onMicroGrantsHatsInitalized(event: Event) {
         const {
             useRegistryAnchor,
@@ -147,24 +147,24 @@ class MicroGrants extends LiveTable {
     }
 
 
-    @OnEvent('allov2.MicroGrantsStrategy.TimestampsUpdated')
-    @OnEvent('allov2.MicroGrantsGovStrategy.TimestampsUpdated')
-    @OnEvent('allov2.MicroGrantsHatsStrategy.TimestampsUpdated')
+    @OnEvent('qa.MicroGrantsStrategy.TimestampsUpdated')
+    @OnEvent('qa.MicroGrantsGovStrategy.TimestampsUpdated')
+    @OnEvent('qa.MicroGrantsHatsStrategy.TimestampsUpdated')
     onPoolTimestampUpdate(event: Event) {
         this.allocationStartTime = event.data.allocationStartTime
         this.allocationEndTime = event.data.allocationEndTime
     }
 
-    @OnEvent('allov2.MicroGrantsStrategy.ApprovalThresholdUpdated')
-    @OnEvent('allov2.MicroGrantsGovStrategy.ApprovalThresholdUpdated')
-    @OnEvent('allov2.MicroGrantsHatsStrategy.ApprovalThresholdUpdated')
+    @OnEvent('qa.MicroGrantsStrategy.ApprovalThresholdUpdated')
+    @OnEvent('qa.MicroGrantsGovStrategy.ApprovalThresholdUpdated')
+    @OnEvent('qa.MicroGrantsHatsStrategy.ApprovalThresholdUpdated')
     onPoolApprovalThresholdUpdate(event: Event) {
         this.approvalThreshold = event.data.approvalThreshold
     }
 
-    @OnEvent('allov2.MicroGrantsStrategy.MaxRequestedAmountIncreased')
-    @OnEvent('allov2.MicroGrantsGovStrategy.MaxRequestedAmountIncreased')
-    @OnEvent('allov2.MicroGrantsHatsStrategy.MaxRequestedAmountIncreased')
+    @OnEvent('qa.MicroGrantsStrategy.MaxRequestedAmountIncreased')
+    @OnEvent('qa.MicroGrantsGovStrategy.MaxRequestedAmountIncreased')
+    @OnEvent('qa.MicroGrantsHatsStrategy.MaxRequestedAmountIncreased')
     onMaxRequestedAmountIncreased(event: Event) {
         this.maxRequestedAmount = this.maxRequestedAmount.plus(event.data.maxRequestedAmount)
     }

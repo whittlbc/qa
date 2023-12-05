@@ -53,12 +53,12 @@ class MicroGrantsRecipient extends LiveTable {
         this.recipientId = event.data.recipientId
     }
 
-    @OnEvent('allov2.MicroGrantsStrategy.Registered')
-    @OnEvent('allov2.MicroGrantsStrategy.UpdatedRegistration')
-    @OnEvent('allov2.MicroGrantsGovStrategy.Registered')
-    @OnEvent('allov2.MicroGrantsGovStrategy.UpdatedRegistration')
-    @OnEvent('allov2.MicroGrantsHatsStrategy.Registered')
-    @OnEvent('allov2.MicroGrantsHatsStrategy.UpdatedRegistration')
+    @OnEvent('qa.MicroGrantsStrategy.Registered')
+    @OnEvent('qa.MicroGrantsStrategy.UpdatedRegistration')
+    @OnEvent('qa.MicroGrantsGovStrategy.Registered')
+    @OnEvent('qa.MicroGrantsGovStrategy.UpdatedRegistration')
+    @OnEvent('qa.MicroGrantsHatsStrategy.Registered')
+    @OnEvent('qa.MicroGrantsHatsStrategy.UpdatedRegistration')
     async onRegistration(event: Event) {
 
         const  {
@@ -81,9 +81,9 @@ class MicroGrantsRecipient extends LiveTable {
         this.status = getStatusFromInt(1)
     }
 
-    @OnEvent('allov2.MicroGrantsStrategy.Distributed')
-    @OnEvent('allov2.MicroGrantsGovStrategy.Distributed')
-    @OnEvent('allov2.MicroGrantsHatsStrategy.Distributed')
+    @OnEvent('qa.MicroGrantsStrategy.Distributed')
+    @OnEvent('qa.MicroGrantsGovStrategy.Distributed')
+    @OnEvent('qa.MicroGrantsHatsStrategy.Distributed')
     onAllocation(event: Event) {
         // Note: this means that the recipient has been allocated funds
         this.status = getStatusFromInt(2)
