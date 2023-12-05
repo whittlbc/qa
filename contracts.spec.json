@@ -1,0 +1,45 @@
+{
+  "namespace": "qa",
+  "groups": [
+    {
+      "name": "MicroGrantsCommon",
+      "abi": "abis/MicroGrantsCommon.json",
+      "isFactoryGroup": true
+    },
+    {
+      "name": "MicroGrantsStrategy",
+      "abi": "abis/MicroGrantsStrategy.json",
+      "isFactoryGroup": true
+    },
+    {
+      "name": "MicroGrantsGovStrategy",
+      "abi": "abis/MicroGrantsGovStrategy.json",
+      "isFactoryGroup": true
+    },
+    {
+      "name": "MicroGrantsHatsStrategy",
+      "abi": "abis/MicroGrantsHatsStrategy.json",
+      "isFactoryGroup": true
+    },
+    {
+      "name": "Registry",
+      "abi": "abis/Registry.json",
+      "contracts": [
+        {
+          "chainId": 5,
+          "address": "0x4aacca72145e1df2aec137e1f3c5e3d75db8b5f3"
+        }
+      ]
+    },
+    {
+      "name": "Allo",
+      "abi": "abis/Allo.json",
+      "contracts": [
+        {
+          "chainId": 5,
+          "address": "0x1133ea7af70876e64665ecd07c0a0476d09465a1"
+        }
+      ]
+    }
+  ]
+}
